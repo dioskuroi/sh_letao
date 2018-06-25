@@ -1,5 +1,20 @@
+@backColor: #222d32;
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .body_bg {
-  background-color: #222d32;
+  background-color: @backColor;
 }
 
 .mt_150 {
@@ -15,4 +30,102 @@
   }
 }
 
+.lt_aside {
+  width: 180px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: @backColor;
+  z-index: 999;
 
+  .brand {
+    width: 100%;
+    height: 50px;
+    background-color: #127EA3;
+    line-height: 50px;
+    text-align: center;
+    
+    a {
+      font-size: 25px;
+      color: #fff;
+    }
+  }
+
+  .head {
+    margin-top: 30px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+      margin-top: 8px;
+    }
+  }
+
+  .nav {
+    margin-top: 35px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      padding-left: 40px;
+      color: #fff;
+      border-left: 3px solid transparent;
+    
+    &.current {
+      border-left: 3px solid #046591;
+      background-color: #252427;
+    }
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.lt_main {
+  width: 100%;
+  height: 1000px;
+  padding-left: 180px;
+  background-color: springgreen;
+
+  .lt_topbar {
+    width: 100%;
+    height: 50px;
+    padding-left: 180px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #018DB7;
+
+    a {
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      font-size: 20px;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+
+  .container-fluid {
+    margin-top: 50px;
+
+    .breadcrumb {
+      margin-top: 20px;
+    }
+  }
+}
