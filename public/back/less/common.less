@@ -30,6 +30,12 @@ ul {
   }
 }
 
+.modal_logout {
+  .modal-body {
+    color: #BE3F3C;
+  }
+}
+
 .lt_aside {
   width: 180px;
   height: 100%;
@@ -38,6 +44,11 @@ ul {
   top: 0;
   background-color: @backColor;
   z-index: 999;
+  transition: all 1.5s;
+
+  &.menu_hidden {
+    left: -180px;
+  }
 
   .brand {
     width: 100%;
@@ -74,6 +85,11 @@ ul {
   .nav {
     margin-top: 35px;
 
+    .child {
+      color: #fff;
+      padding-left: 20px;
+    }
+
     a {
       display: block;
       width: 100%;
@@ -101,6 +117,11 @@ ul {
   height: 1000px;
   padding-left: 180px;
   background-color: springgreen;
+  transition: all 1.5s;
+
+  &.menu_hidden {
+    padding: 0;
+  }
 
   .lt_topbar {
     width: 100%;
@@ -110,6 +131,11 @@ ul {
     left: 0;
     top: 0;
     background-color: #018DB7;
+    transition: all 1.5s;
+
+    &.menu_hidden {
+    padding: 0;
+  }
 
     a {
       width: 50px;

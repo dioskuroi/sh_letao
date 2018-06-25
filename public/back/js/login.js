@@ -50,7 +50,7 @@ $($ => {
   })
 
   // 后台校验功能
-  $('#loginBtn').on('click', e => {
+  $('#form').on('success.form.bv', e => {
     e.preventDefault()
     $.ajax({
       url: '/employee/employeeLogin',

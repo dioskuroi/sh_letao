@@ -21,6 +21,9 @@ ul {
   line-height: 50px;
   padding: 0;
 }
+.modal_logout .modal-body {
+  color: #BE3F3C;
+}
 .lt_aside {
   width: 180px;
   height: 100%;
@@ -29,6 +32,10 @@ ul {
   top: 0;
   background-color: #222d32;
   z-index: 999;
+  transition: all 1.5s;
+}
+.lt_aside.menu_hidden {
+  left: -180px;
 }
 .lt_aside .brand {
   width: 100%;
@@ -60,6 +67,10 @@ ul {
 .lt_aside .nav {
   margin-top: 35px;
 }
+.lt_aside .nav .child {
+  color: #fff;
+  padding-left: 20px;
+}
 .lt_aside .nav a {
   display: block;
   width: 100%;
@@ -82,6 +93,10 @@ ul {
   height: 1000px;
   padding-left: 180px;
   background-color: springgreen;
+  transition: all 1.5s;
+}
+.lt_main.menu_hidden {
+  padding: 0;
 }
 .lt_main .lt_topbar {
   width: 100%;
@@ -91,6 +106,10 @@ ul {
   left: 0;
   top: 0;
   background-color: #018DB7;
+  transition: all 1.5s;
+}
+.lt_main .lt_topbar.menu_hidden {
+  padding: 0;
 }
 .lt_main .lt_topbar a {
   width: 50px;
