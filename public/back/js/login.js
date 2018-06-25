@@ -1,5 +1,5 @@
-$(() => {
-  // 本地校验
+$($ => {
+  // 本地校验功能
   $('#form').bootstrapValidator({
     //2. 指定校验时的图标显示，默认是bootstrap风格
     feedbackIcons: {
@@ -40,13 +40,17 @@ $(() => {
       }
     }
   })
-  
+
+  // 获取校验实例
   const validator = $('#form').data('bootstrapValidator')
-  $('#resetBtn').on('click',()=>{
+
+  // 重置表单功能
+  $('#resetBtn').on('click', () => {
     validator.resetForm()
   })
 
-  $('#loginBtn').on('click',e=>{
+  // 后台校验功能
+  $('#loginBtn').on('click', e => {
     e.preventDefault()
     $.ajax({
       url: '/employee/employeeLogin',
@@ -54,18 +58,17 @@ $(() => {
       dataType: 'json',
       data: $('#form').serialize(),
       success(info) {
-        console.log(info);
-        
         if (info.success) {
-          location.href='/back/'
+          location.href = '/back/'
         }
-        if (info.error===1000) {
-          validator.updateStatus('username','INVALID','callback')
+        if (info.error === 1000) {
+          validator.updateStatus('username', 'INVALID', 'callback')
         }
-        if (info.error===1001) {
-          validator.updateStatus('password','INVALID','callback')
+        if (info.error === 1001) {
+          validator.updateStatus('password', 'INVALID', 'callback')
         }
       }
     })
   })
+
 })
