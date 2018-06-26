@@ -92,7 +92,6 @@ ul {
   width: 100%;
   height: 1000px;
   padding-left: 180px;
-  background-color: springgreen;
   transition: all 1.5s;
 }
 .lt_main.menu_hidden {
@@ -107,6 +106,7 @@ ul {
   top: 0;
   background-color: #018DB7;
   transition: all 1.5s;
+  z-index: 666;
 }
 .lt_main .lt_topbar.menu_hidden {
   padding: 0;
