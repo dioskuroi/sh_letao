@@ -24,15 +24,28 @@
     </div>
     <div class="nav">
       <ul>
-        <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
         <li>
-          <a class="category" href="javascript:;"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+          <a href="user.html">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>用户管理</span>
+          </a>
+        </li>
+        <li>
+          <a class="category" href="javascript:;">
+            <i class="glyphicon glyphicon-list"></i>
+            <span>分类管理</span>
+          </a>
           <div class="child">
             <a href="first.html" class="first current">一级分类</a>
             <a href="second.html" class="second">二级分类</a>
           </div>
         </li>
-        <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+        <li>
+          <a href="product.html">
+            <i class="glyphicon glyphicon-tags"></i>
+            <span>商品管理</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -41,8 +54,12 @@
   <div class="lt_main">
     <!-- 公共顶部 -->
     <div class="lt_topbar">
-      <a href="#" class="icon_menu pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a href="#" class="icon_logout pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
+      <a href="#" class="icon_menu pull-left">
+        <i class="glyphicon glyphicon-align-justify"></i>
+      </a>
+      <a href="#" class="icon_logout pull-right">
+        <i class="glyphicon glyphicon-log-out"></i>
+      </a>
     </div>
     <div class="container-fluid">
       <ol class="breadcrumb">
@@ -52,8 +69,50 @@
         <li class="active">分类管理</li>
         <li class="active">一级分类</li>
       </ol>
+      <button class="btn btn-default mb_20" id="addBtn">添加分类</button>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th width="20%">序号</th>
+            <th width="80%">一级分类名</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
     </div>
   </div>
+
+  <!-- 添加分类模态框 -->
+  <div class="modal fade modal_add">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <form id="form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <h4 class="modal-title">添加分类</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary" id="add">添加</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 
   <!-- 退出登录模态框 -->
   <div class="modal fade modal_logout">
@@ -66,7 +125,8 @@
           <h4 class="modal-title">温馨提示</h4>
         </div>
         <div class="modal-body">
-          <p><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+          <p>
+            <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -76,11 +136,24 @@
     </div>
   </div>
 
+  <!-- 模板 -->
+  <script type="text/html" id="tpl">
+    {{ each rows v i}}
+    <tr>
+      <td>{{ i + 1 + (page - 1) * size }}</td>
+      <td>{{ v.categoryName }}</td>
+    </tr>
+    {{ /each }}
+  </script>
+
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/first.js"></script>
 </body>
 
 </html>
