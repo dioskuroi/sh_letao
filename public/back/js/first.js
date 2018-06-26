@@ -48,7 +48,7 @@ $($ => {
       }
     })
   })
-  $('#add').on('click',e=>{
+  $('#form').on('success.form.bv',e=>{
     e.preventDefault()
     $('.modal_add').modal('hide')
     $.ajax({
@@ -60,10 +60,10 @@ $($ => {
         if (info.success) {
           currentPage = 1
           render()
+          $('#form').data('bootstrapValidator').resetForm(true)
         }
       }
     })
-    $('#form').data('bootstrapValidator').resetForm(true)
   })
 
 })
