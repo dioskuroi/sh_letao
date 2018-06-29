@@ -29,3 +29,9 @@
 .lt_product li a {
   display: block;
 }
+.lt_product li a .price {
+  color: red;
+}
+.lt_product li a .oldPrice {
+  text-decoration: line-through;
+}
