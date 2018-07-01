@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/search.css">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 <!--<i class="fa fa-thumbs-up"></i>-->
@@ -20,25 +20,29 @@
 <!-- 全屏容器 -->
 <div class="lt_container">
   <div class="lt_header">
-    <!-- history.go(-1) 返回上一页 -->
-    <a href="javascript:history.go(-1);" class="icon_left"><i class="mui-icon mui-icon-back"></i></a>
-    <h3>乐淘云购</h3>
+    <a href="javascript:history.go(-1)" class="icon_left"><i class="mui-icon mui-icon-back"></i></a>
+    <h3>登陆</h3>
   </div>
   <div class="lt_main">
     <div class="mui-scroll-wrapper">
       <div class="mui-scroll">
 
-        <!-- 搜索框 -->
-        <div class="lt_search">
-          <input type="text" placeholder="请输入搜索关键字" class="search_input">
-          <button class="mui-btn mui-btn-primary search_btn">搜索</button>
-        </div>
-
-
-        <!-- 搜索历史 -->
-        <div class="lt_history">
-          <!-- 挖个大坑 -->
-        </div>
+        <form class="mui-input-group">
+          <div class="mui-input-row">
+            <label>用户名</label>
+            <!-- 给 input 加 mui-input-clear 快速删除 -->
+            <input type="text" class="mui-input-clear" placeholder="请输入用户名" name="username">
+          </div>
+          <div class="mui-input-row">
+            <label>密码</label>
+            <!-- 给 input 加 mui-input-password 显示密码 -->
+            <input type="password" class="mui-input-password" placeholder="请输入密码" name="password">
+          </div>
+          <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary" id="loginBtn" >登陆</button>
+            <button type="reset" class="mui-btn mui-btn-danger" >重置</button>
+          </div>
+        </form>
 
       </div>
     </div>
@@ -63,7 +67,7 @@
           <p>购物车</p>
         </a>
       </li>
-      <li>
+      <li class="current">
         <a href="user.html">
           <i class="fa fa-user"></i>
           <p>会员中心</p>
@@ -73,35 +77,12 @@
   </div>
 </div>
 
-<script type="text/html" id="history_tpl">
-  {{ if arr.length > 0 }}
-    <div class="title mui-clearfix">
-      <span class="mui-pull-left">搜索历史</span>
-      <span class="mui-pull-right icon_empty"><i class="fa fa-trash"></i>清空记录</span>
-    </div>
-    <div class="content">
-      <ul>
-
-        {{ each arr v i }}
-          <li>
-            <a class="mui-pull-left" href="searchList.html?key={{ v }}">{{ v }}</a>
-            <i data-index="{{ i }}" class="mui-pull-right mui-icon mui-icon-closeempty icon_delete"></i>
-          </li>
-        {{ /each }}
-      </ul>
-    </div>
-  {{ else }}
-    <p>没有更多历史记录了</p>
-  {{ /if }}
-</script>
-
 
 
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
-<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/search.js"></script>
+<script src="./js/login.js"></script>
 
 </body>
 </html>

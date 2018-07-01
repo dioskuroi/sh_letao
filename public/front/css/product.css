@@ -1,0 +1,39 @@
+.lt_footer {
+  background-color: #EFEFF4;
+  border-top: 1px solid red;
+  padding: 10px;
+}
+.lt_footer a.mui-pull-left {
+  padding: 5px;
+  width: auto;
+  height: auto;
+}
+.item_box {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+.pro_price .price {
+  color: red;
+}
+.pro_price .oldPrice {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: #666;
+}
+.pro_size span {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  display: inline-block;
+  line-height: 25px;
+  text-align: center;
+}
+.pro_size span.current {
+  background-color: orange;
+  color: #fff;
+}
+.pro_num span {
+  font-size: 12px;
+  color: #666;
+}
